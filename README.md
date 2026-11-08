@@ -1,6 +1,8 @@
 # Anet-A6-PCB
 Przystosowanie drukarki 3D Anet A6 do tworzenia PCB.
 
+PenHolder został utworzony za pomocą prgramu FreeCAD.
+Projekt ten znajduje się w katalogu FreeCAD.
 PenHolder składa się z pięciu części wydrukowanych na drukarce 3D, oraz szyn wykonanych z pręta aluminiowego o średnicy 5mm.
 Pliki drukowałem z Pet-G.
 
