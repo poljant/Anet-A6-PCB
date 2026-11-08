@@ -27,33 +27,5 @@ Pisak należy ustawić 1mm wyżej od pozycji minimalnej na suwaku, aby swobodnie
 Jeśli przy większych PCB są problemy z poziomowaniem stoły drukarki, to suwak z pisakiem można ustawiś wyżej niż 1mm od podstawy holdera.
 
 W pliku *.gcode dla drukarki Anet A6 i dla tego holdera, należy ustawić kody od pierwszego do M3.
-
-M107             ; Wyłącz wentylator
-G21              ; Jednostki w mm
-G90              ; Pozycjonowanie absolutne
-G94              ; Posuw mm/min
-
-; Krok 1: Pełne bazowanie (Home) wszystkich osi
-G28              ; Drukarka zrobi X0, Y0, a oś Z zbazuje na środku stołu (zgodnie z Marlinem)
-
-; Krok 2, 3 & 4: Bezpieczne podniesienie osi Z
-G1 Z5 F600       ; Podniesienie na bezpieczną wysokość Z=5mm
-
-; Krok 5: Ustawienie pisaka idealnie nad punktem (X10, Y10) na płytce
-G1 X0 Y70 F3000  ; Przejazd roboczy głowicy, aby PISAK wycelował w punkt (10,10)
-
-; Krok 6: Opuszczenie do poziomu roboczego 
-G1 Z2 F600      ; Ruch w dół
-
-; Ręczne ustawienie i potwierdzenie operatora
-M0 Wyreguluj pisak 0.4 ; Czeka na Twoje kliknięcie przycisku na drukarce
-
-; --- KLUCZOWA POPRAWKA PO POTWIERDZENIU ---
-G92 X10.00 Y10.00 Z-1 ; Nadpisanie licznika! Mówimy drukarce: "Fizycznie stoisz teraz na X10 Y10 Z-1"
-; --- KONIEC PROCEDURY STARTOWEJ ---
-
-; --- TUTAJ ZACZYNA SIĘ KOD Z FLATCAM ---
-
-;M03              ; Włączenie wrzeciona (wirtualne)
-
+Kody te są zawarte w pliku gcode.txt. Wystarczy skopiować zawartość pliku do początku pliku *.gcode.
 
